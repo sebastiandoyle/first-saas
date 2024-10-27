@@ -1,4 +1,5 @@
-package_json = {
+# Package.json
+    package_json = {
         "name": "simple-saas",
         "version": "0.1.0",
         "private": True,
@@ -28,3 +29,8 @@ package_json = {
             "postcss": "^8.0.0"
         }
     }
+
+    # Convert Python bool to JSON bool
+    package_json["private"] = "true"  # String "true" instead of Python True
+
+    create_file('package.json', json.dumps(package_json, indent=2))
